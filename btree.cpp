@@ -1,7 +1,7 @@
 //btree.tc
+#include "btree.h"
 #include "btnode.h"
 #include "indbuff.h"
-#include "btree.h"
 #include <iostream>
 
 const int MaxHeight = 5;
