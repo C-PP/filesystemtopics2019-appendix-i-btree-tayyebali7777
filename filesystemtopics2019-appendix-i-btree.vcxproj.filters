@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="btnode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="btree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="buffile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -43,9 +37,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="recording.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="simpind.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="testbtree.cpp">

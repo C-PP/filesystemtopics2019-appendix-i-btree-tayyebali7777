@@ -18,6 +18,33 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="buffile.cpp" />
+    <ClCompile Include="fixfld.cpp" />
+    <ClCompile Include="fixlen.cpp" />
+    <ClCompile Include="indbuff.cpp" />
+    <ClCompile Include="indnode.cpp" />
+    <ClCompile Include="iobuffer.cpp" />
+    <ClCompile Include="length.cpp" />
+    <ClCompile Include="recording.cpp" />
+    <ClCompile Include="testbtree.cpp" />
+    <ClCompile Include="varlen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="btnode.h" />
+    <ClInclude Include="btree.h" />
+    <ClInclude Include="buffile.h" />
+    <ClInclude Include="fixfld.h" />
+    <ClInclude Include="fixlen.h" />
+    <ClInclude Include="indbuff.h" />
+    <ClInclude Include="indnode.h" />
+    <ClInclude Include="iobuffer.h" />
+    <ClInclude Include="length.h" />
+    <ClInclude Include="recfile.h" />
+    <ClInclude Include="recording.h" />
+    <ClInclude Include="simpind.h" />
+    <ClInclude Include="varlen.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{413E100E-F624-4401-8E12-D457D46C1A3B}</ProjectGuid>
@@ -80,7 +107,7 @@
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -98,36 +125,11 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="btnode.cpp" />
-    <ClCompile Include="btree.cpp" />
-    <ClCompile Include="buffile.cpp" />
-    <ClCompile Include="fixfld.cpp" />
-    <ClCompile Include="fixlen.cpp" />
-    <ClCompile Include="indbuff.cpp" />
-    <ClCompile Include="indnode.cpp" />
-    <ClCompile Include="iobuffer.cpp" />
-    <ClCompile Include="length.cpp" />
-    <ClCompile Include="recording.cpp" />
-    <ClCompile Include="simpind.cpp" />
-    <ClCompile Include="testbtree.cpp" />
-    <ClCompile Include="varlen.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="btnode.h" />
-    <ClInclude Include="btree.h" />
-    <ClInclude Include="buffile.h" />
-    <ClInclude Include="fixfld.h" />
-    <ClInclude Include="fixlen.h" />
-    <ClInclude Include="indbuff.h" />
-    <ClInclude Include="indnode.h" />
-    <ClInclude Include="iobuffer.h" />
-    <ClInclude Include="length.h" />
-    <ClInclude Include="recfile.h" />
-    <ClInclude Include="recording.h" />
-    <ClInclude Include="simpind.h" />
-    <ClInclude Include="varlen.h" />
-  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
