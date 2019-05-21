@@ -8,7 +8,7 @@
 #include <fstream>
 #include "iobuffer.h"
 
-
+using namespace std;
 #ifndef FALSE
 #define FALSE (0)
 #define TRUE (1)

@@ -170,49 +170,61 @@ int BTree<keyType>::Remove(const keyType key, const int recAddr)
 {
 	int result; int level = Height - 1;
 	int newLargest = 0;
-	keyType prevKey;
+	keyType prevKey,newKey;
 	keyType largestKey;
-	BTNode * thisNode, *newNode = nullptr, *parentNode = nullptr;
-	thisNode = FindLeaf(key);
-
-
-	// test for special case of new largest key in tree
-	if (key > thisNode->LargestKey())
+	BTNode * thisNode = nullptr, *newNode = nullptr, *parentNode = nullptr;
+	
+	
+	
+	for (;level > 0;)
 	{
-		newLargest = 1;
+		thisNode = FindLeaf(key);
 		prevKey = thisNode->LargestKey();
+		result = thisNode->Remove(key, recAddr);
+		Store(thisNode);
+		//thisNode->Print(cout);
+		level--; // go up to parent level
+
+		parentNode = Nodes[level];
+		cout << "this is parrent node" << endl;
+		parentNode->Print(cout);
+		cout << "this is this node" << endl;
+		thisNode->Print(cout);
+		result = parentNode->UpdateKey(parentNode->LargestKey(), prevKey);
+		result = parentNode->Insert(parentNode->LargestKey(), parentNode->RecAddr);
+		//if (level==2)
+		//{
+		//	//parentNode = Nodes[level];
+		//	largestKey = thisNode->LargestKey();
+		//	result = parentNode->UpdateKey(largestKey, parentNode->LargestKey());
+		//	result = parentNode->Remove(parentNode->LargestKey(), recAddr);
+		//	Store(parentNode);
+		//	cout << "2nd cout" << endl;
+		////	parentNode->Print(cout);
+		//}
+
+		Store(parentNode);
 	}
-
-	result = thisNode->Remove(key, recAddr);
-	largestKey = thisNode->LargestKey();
-	result = parentNode->UpdateKey(largestKey, thisNode->LargestKey());
-	cout << "1st cout" << endl;
-
-	if(thisNode<numKeys())
-	//thisNode->Print(cout);
-	//parentNode->Print(cout);
-	Store(thisNode);
-	/*if (newLargest)
-		for (int i = 0; i < Height - 1; i++)
-		{
-			Nodes[i]->UpdateKey(prevKey, key);
-			if (i > 0) Store(Nodes[i]);
-		}*/
-
-
-	//While(result==-1){
-
-	//largestKey = thisNode->LargestKey();
-
-	//parentNode = Nodes[level];
- //   result = parentNode->UpdateKey(largestKey, thisNode->LargestKey());
-	//result = parentNode->Remove(thisNode->LargestKey(), thisNode->RecAddr);
-	//thisNode = parentNode;
-	////parentNode->Print(cout);
-	//level--;
-	//
+	
+	
+	
+	
+	//while (result == -1) //if underflow
+	//{
+	//	//remember the largest key
+	//	largestKey = thisNode->LargestKey();
+	//	newNode = NewNode();
+	//	thisNode->Merge(newNode);
+	//	Store(thisNode);
+	//	Store(newNode);
+	//	parentNode = Nodes[level];
+	//	result = parentNode->UpdateKey(largestKey, parentNode->LargestKey());
+	//	result = parentNode->Remove(parentNode->LargestKey(), newNode->RecAddr);
+	//	thisNode = parentNode;
 	//}
+	
 
+	
 	return 1;
 }
 
