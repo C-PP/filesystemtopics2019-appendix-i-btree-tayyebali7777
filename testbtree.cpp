@@ -69,12 +69,6 @@ int main(int argc, char * argv) {
 			cout << "Key of the " << serial << " having address " << result<< endl;
 
 
-			/*for (int i = 0; i <1; i++)
-			{
-				result=bt.Search(keys[1], 1);
-				bt.Print(cout);
-			}*/
-			
 			if (result = 1) cout << "Search Success!" << endl;
 			else cout << "Searching Function Error!!" << endl;
 			break;
