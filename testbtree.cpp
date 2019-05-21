@@ -20,7 +20,7 @@ int main(int argc, char * argv) {
 
 	while (1)
 	{
-		cout << "\nSelect command 1: Create File, 2. Insert the characters, 3.Search Function, 4.Remove Function, 5. InOrder Traversal, 6.Quit => ";
+		cout << "\nSelect command 1:: Create File, 2:: Insert & Display characters, 3:InOrder Traversal, 4::Search Function, 5::Remove Function , 6.Quit => ";
 		cin >> select;
 
 		switch (select) {
@@ -52,8 +52,15 @@ int main(int argc, char * argv) {
 		
 			break;
 		}
-
 		case 3:
+		{
+			cout << endl;
+			cout << "The Order Traversal is given below" << endl;
+			cout << endl;
+			bt.PrintInOrderTraversal(cout); //Printing IN order Traversal
+			break;
+		}
+		case 4:
 		{
 			char serial;
 			cout << "Enter key to search" << endl;
@@ -74,23 +81,18 @@ int main(int argc, char * argv) {
 		}
 		case 5: 
 		{
-			for (i = 0; i < 4; i++)
+			for (i = 0; i < 26; i++)
 			{
 				cout << "Removing " << keys[i] << endl;
 				result = bt.Remove(keys[i], i);
-				bt.Print(cout);
+				//bt.Print(cout);
 			}
+			cout << "The final output is given below " << endl;
+			bt.Print(cout);
 		
 			break;
 		}
-		case 4:
-		{
-			cout << endl;
-			cout<<"The Order Traversal is given below" << endl;
-			cout << endl;
-			bt.PrintInOrderTraversal(cout); //Printing IN order Traversal
-			break;
-		}
+		
 		default:
 			// others
 			exit(0);
