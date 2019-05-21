@@ -75,7 +75,9 @@ int main(int argc, char * argv) {
 		}
 		case 5: 
 		{
-			for (i = 0; i < 26; i++)
+
+			for (i = 0; i <26; i++)
+
 			{
 				cout << "Removing " << keys[i] << endl;
 				result = bt.Remove(keys[i], i);

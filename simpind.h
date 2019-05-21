@@ -91,7 +91,7 @@ int SimpleIndex<keyType>::Remove(const keyType key, const int recAddr)
 	if (index < 0) return 0; // key not in index
 	for (int i = index; i < NumKeys; i++)
 	{
-		Keys[i] = Keys[i + 1];
+	Keys[i] = Keys[i + 1];
 		RecAddrs[i] = RecAddrs[i + 1];
 	}
 	NumKeys--;
